@@ -2,6 +2,20 @@ package com.e;
 
 public class Main {
     public static void main(String[] args) {
+
+        /*
+
+            O que aprendemos?
+            Através das Threads podemos executar tarefas em paralelo;
+            Uma classe que implementa a interface Runnable define a tarefa que o Thread executará;
+            O construtor da classe Thread recebe esse Runnable;
+            Devemos inicializar uma Thread explicitamente através do método start();
+            Através do Thread.sleep(millis) podemos mandar uma thread dormir.
+
+
+        */
+
+        
         try {
             System.out.println("Hello world!");
             System.out.println("Isso é um thread main ");
