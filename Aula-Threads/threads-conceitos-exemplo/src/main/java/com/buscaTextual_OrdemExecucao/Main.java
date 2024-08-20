@@ -1,4 +1,4 @@
-package com.buscaTextual;
+package com.buscaTextual_OrdemExecucao;
 
 public class Main {
 
