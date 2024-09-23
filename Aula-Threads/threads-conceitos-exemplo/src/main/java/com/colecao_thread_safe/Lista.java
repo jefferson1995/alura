@@ -3,12 +3,23 @@ package com.colecao_thread_safe;
 public class Lista {
 
 
-    private String [] elementos = new String[1000];
+    private String[] elementos = new String[1000];
     private int indice = 0;
 
     public synchronized void adiciona(String elemento) {
-            elementos[indice] = elemento;
-            this.indice++;
+        elementos[indice] = elemento;
+        this.indice++;
+
+        try {
+            Thread.sleep(5);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+
+        if (this.indice == this.elementos.length) {
+            System.out.println("lista está cheia, notificando. ");
+            this.notify();
+        }
     }
 
     public int tamanho() {
@@ -19,4 +30,7 @@ public class Lista {
         return this.elementos[posicao];
     }
 
+    public boolean estaCheia() {
+        return this.indice == this.tamanho();
+    }
 }
