@@ -24,6 +24,24 @@ public class Anotacoes {
 
     //-----------Reuso de Threads --------------------------
 
+    //AULA 1
+
+//    Nessa aula, aprendemos como enviar dados do cliente para o servidor usando InputStream e OutputStream.
+//    Primeiro, criamos um OutputStream no cliente para enviar um comando simples (c1) para o servidor. Em seguida, usamos um PrintStream para facilitar a escrita no OutputStream.
+//    No servidor, utilizamos um InputStream para receber os dados enviados pelo cliente. Criamos um Scanner para ler as linhas do InputStream e imprimimos o comando recebido.
+//    Para garantir a segurança, envolvemos o código em um bloco try-catch para tratar possíveis erros.
+//    No final, testamos o código, enviando o comando c1 do cliente para o servidor e observando a resposta no console.
+
+    //AULA 2
+
+//    reutilizar threads para otimizar o desempenho do nosso servidor.
+//    Criamos um pool de threads, que é como uma piscina onde as threads ficam prontas para serem usadas.
+//    Vimos duas maneiras de criar um pool:
+//    newFixedThreadPool: cria um pool com um número fixo de threads.
+//            newCachedThreadPool: cria um pool que cresce e diminui dinamicamente, de acordo com a demanda.
+//    Com o pool de threads, podemos reaproveitar as threads que já estão disponíveis, evitando a criação de novas threads a cada nova conexão. Isso torna nosso servidor mais eficiente e rápido!
+
+
 
 
 
