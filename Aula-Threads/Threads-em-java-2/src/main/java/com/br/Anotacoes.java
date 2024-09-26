@@ -42,6 +42,25 @@ public class Anotacoes {
 //    Com o pool de threads, podemos reaproveitar as threads que já estão disponíveis, evitando a criação de novas threads a cada nova conexão. Isso torna nosso servidor mais eficiente e rápido!
 
 
+    //Melhorando o cliente
+
+    //AULA 1
+
+
+//    aprendemos como melhorar o cliente da nossa aplicação, tornando-o mais flexível e capaz de enviar e receber dados do servidor de forma simultânea.
+//    Primeiro, modificamos o cliente para que ele possa receber comandos do usuário através do teclado, permitindo enviar diferentes comandos ao servidor.
+//    Em seguida, implementamos a funcionalidade de receber dados do servidor, utilizando um InputStream e um Scanner para ler as respostas do servidor.
+//    Para que o cliente possa enviar e receber dados ao mesmo tempo, introduzimos o conceito de threads, criando duas threads separadas: uma para enviar comandos e outra para receber respostas do servidor.
+//    Por fim, corrigimos um problema que ocorria ao fechar o socket antes que as threads terminassem de executar, garantindo que o socket só seja fechado após a conclusão das threads.
+//    Com essas modificações, nosso cliente agora é mais robusto e capaz de se comunicar com o servidor de forma eficiente e simultânea.
+
+    //AULA 2
+
+//    devolver informações do servidor para o cliente, melhorando a comunicação entre eles.
+//    Começamos analisando o código do servidor, onde recebemos comandos do cliente através do InputStream. Para processar esses comandos, utilizamos um switch que nos permite executar ações específicas para cada comando.
+//    Em seguida, aprendemos a utilizar o OutputStream para enviar mensagens de volta para o cliente, utilizando a classe PrintStream.
+//    Por fim, corrigimos um problema no código do servidor, onde o switch estava executando todos os cases e não apenas o que correspondia ao comando recebido. Para resolver isso, utilizamos a instrução break para sair do switch após executar o case correto.
+//    Com essas modificações, nosso servidor agora consegue receber comandos do cliente, processá-los e enviar uma resposta de confirmação.
 
 
 

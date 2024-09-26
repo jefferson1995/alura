@@ -34,7 +34,6 @@ public class Main {
 
             DistribuirTarefas distribuirTarefas = new DistribuirTarefas(socket);
             threadPool.execute(distribuirTarefas);
-
         }
     }
 }
