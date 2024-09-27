@@ -64,4 +64,26 @@ public class Anotacoes {
 
 
 
+        //Entendendo o volatile
+
+    //AULA 1
+
+//    melhorar o design do nosso servidor para que ele possa ser desligado corretamente.
+//    Primeiro, criamos um novo comando, "fim", que o cliente pode enviar para o servidor, solicitando o desligamento.
+//    Em seguida, refatoramos o código do servidor, separando as etapas de inicialização, execução e finalização em métodos distintos.
+//    Para controlar o estado do servidor, introduzimos um atributo booleano "estáRodando", que indica se o servidor está ativo ou não.
+//    Ao receber o comando "fim", o servidor chama o método "parar", que define "estáRodando" como falso e fecha o ServerSocket e o ThreadPool.
+//    No entanto, descobrimos que o ThreadPool não termina imediatamente, pois ele espera que todas as tarefas sejam concluídas.
+//    Por fim, testamos o código e observamos que o servidor se comporta como esperado, esperando que todos os clientes terminem suas tarefas antes de ser desligado.
+
+
+    //AULA 2
+
+//    Nesta aula, aprendemos sobre o problema de múltiplas threads acessando o mesmo valor na memória. Vimos como o Java, para otimizar o acesso, utiliza caches para cada thread, o que pode levar a problemas de sincronização, pois as alterações feitas em um cache podem não ser refletidas imediatamente nos outros.
+//    Para solucionar esse problema, aprendemos sobre a palavra-chave volatile, que desabilita o cache para um atributo, garantindo que todas as threads acessem o valor diretamente na memória principal.
+//    Além disso, conhecemos a classe AtomicBoolean, que encapsula um booleano volátil, oferecendo uma maneira mais segura e fácil de lidar com a concorrência.
+//    Essa aula foi bem importante para entendermos como garantir a consistência de dados em ambientes multithread, né?
+//    Agora, para praticar, que tal tentar implementar um exemplo simples usando a classe AtomicBoolean? Você pode criar um programa com duas threads que alternam o valor de um AtomicBoolean e observam as mudanças.
+//    Lembre-se de usar o get e o set para acessar e modificar o valor do AtomicBoolean.
+
 }
