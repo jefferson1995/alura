@@ -86,4 +86,34 @@ public class Anotacoes {
 //    Agora, para praticar, que tal tentar implementar um exemplo simples usando a classe AtomicBoolean? Você pode criar um programa com duas threads que alternam o valor de um AtomicBoolean e observam as mudanças.
 //    Lembre-se de usar o get e o set para acessar e modificar o valor do AtomicBoolean.
 
+
+        //Distribuindo Comando e tratamento de erros
+
+        //AULA 1
+
+//        distribuir comandos em threads separadas no nosso servidor de tarefas. A ideia é que cada comando enviado pelo cliente seja processado em um thread diferente para evitar que o servidor fique bloqueado.
+//
+//        Para isso, criamos classes separadas para cada comando, implementando a interface Runnable. Cada classe de comando recebe a saída do cliente como parâmetro para poder enviar uma resposta.
+//
+//        Para gerenciar as threads, usamos um ThreadPool que já tínhamos criado. Ao invés de criar um novo ThreadPool para cada cliente, passamos o ThreadPool existente para a classe que atende o cliente. Assim, podemos aproveitar os threads do ThreadPool para executar os comandos.
+//
+//        Também vimos como lidar com a situação em que o ThreadPool está cheio e não há threads disponíveis para executar um novo comando. Nesse caso, o comando fica em espera até que um thread fique livre.
+//
+
+        //AULA 2
+
+//        lidar com exceções em threads. Vimos que se a exceção acontecer dentro de um thread, o try catch que está na thread principal não vai capturar a exceção. Isso acontece porque cada thread tem sua própria pilha de execução, e a exceção só é tratada na pilha onde ela ocorreu.
+//        Para tratar a exceção, precisamos colocar o try catch dentro do método run da thread. Mas, se tivermos várias threads, não queremos ter que colocar try catch em cada uma delas.
+
+        //AULA 3
+
+//        maneira eficiente de lidar com exceções em threads, especialmente quando usamos thread pools.
+//        O segredo está em usar um UncaughtExceptionHandler, que é um objeto responsável por tratar as exceções que acontecem nas threads.
+//        Criamos uma classe TratadorDeExcecao que implementa a interface Thread.UncaughtExceptionHandler e, dentro dela, definimos como queremos lidar com as exceções.
+//        Para usar esse tratador, precisamos criar uma ThreadFactory, que é uma fábrica de threads. Essa fábrica é responsável por criar as threads e, ao fazê-lo, podemos configurar o UncaughtExceptionHandler para cada thread criada.
+//        Dessa forma, garantimos que todas as threads do nosso thread pool tenham um tratador de exceções personalizado, evitando que exceções não tratadas causem problemas no nosso sistema.
+//        Lembre-se que, em um projeto real, você pode fazer muito mais com o UncaughtExceptionHandler, como gravar logs, enviar emails ou até mesmo tomar medidas para corrigir o problema.
+
+
+
 }

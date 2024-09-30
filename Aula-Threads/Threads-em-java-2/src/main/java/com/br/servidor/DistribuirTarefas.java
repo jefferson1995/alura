@@ -4,15 +4,18 @@ import java.io.IOException;
 import java.io.PrintStream;
 import java.net.Socket;
 import java.util.Scanner;
+import java.util.concurrent.ExecutorService;
 
 public class DistribuirTarefas implements Runnable {
 
     private Socket socket;
     private ServidorTarefas servidorTarefas;
+    ExecutorService threadPool;
 
-    public DistribuirTarefas(Socket socket, ServidorTarefas servidorTarefas) {
+    public DistribuirTarefas(ExecutorService threadPool, Socket socket, ServidorTarefas servidorTarefas) {
         this.socket = socket;
         this.servidorTarefas = servidorTarefas;
+        this.threadPool = threadPool;
     }
 
     @Override
@@ -31,11 +34,15 @@ public class DistribuirTarefas implements Runnable {
 
                 switch (linha){
                     case "c1": {
-                        saidaEnviarCliente.println("Confirmação comando c1");
+                        System.out.println("recebendo comando: " + linha);
+                        ComandoC1 comandoC1 = new ComandoC1(saidaEnviarCliente);
+                        threadPool.submit(comandoC1);
                         break;
                     }
                     case "c2": {
-                        saidaEnviarCliente.println("Confirmação comando c2");
+                        System.out.println("recebendo comendo: " + linha);
+                        ComandoC2 comandoC2 = new ComandoC2(saidaEnviarCliente);
+                        this.threadPool.submit(comandoC2);
                         break;
                     }
                     case "c3": {
