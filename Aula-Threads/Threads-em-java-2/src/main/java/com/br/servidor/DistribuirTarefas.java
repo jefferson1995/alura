@@ -5,6 +5,7 @@ import java.io.PrintStream;
 import java.net.Socket;
 import java.util.Scanner;
 import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Future;
 
 public class DistribuirTarefas implements Runnable {
 
@@ -41,8 +42,13 @@ public class DistribuirTarefas implements Runnable {
                     }
                     case "c2": {
                         System.out.println("recebendo comendo: " + linha);
-                        ComandoC2 comandoC2 = new ComandoC2(saidaEnviarCliente);
-                        this.threadPool.submit(comandoC2);
+                        ComandoC2ChamaWS comandoC2ChamaWS = new ComandoC2ChamaWS(saidaEnviarCliente);
+                        ComandoC2AcessaBanco comandoC2AcessaBanco = new ComandoC2AcessaBanco(saidaEnviarCliente);
+                        Future<String> futureWs = this.threadPool.submit(comandoC2ChamaWS);
+                        Future<String> futureBanco = this.threadPool.submit(comandoC2AcessaBanco);
+
+                        this.threadPool.submit(new JuntaResultadosFutureWSAndBanco(futureWs, futureBanco, saidaEnviarCliente));
+
                         break;
                     }
                     case "c3": {

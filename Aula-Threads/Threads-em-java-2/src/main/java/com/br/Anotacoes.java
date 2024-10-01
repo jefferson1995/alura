@@ -115,5 +115,24 @@ public class Anotacoes {
 //        Lembre-se que, em um projeto real, você pode fazer muito mais com o UncaughtExceptionHandler, como gravar logs, enviar emails ou até mesmo tomar medidas para corrigir o problema.
 
 
+    //Retornos no Futuro
+
+
+    //AULA 1
+
+//    usar a interface Callable para criar tarefas que podem retornar um resultado.
+//    Vimos que a interface Callable é uma alternativa à interface Runnable, que não permite retornar valores.
+//    Também aprendemos sobre a classe Future, que representa um resultado que estará disponível no futuro.
+//    Com a classe Future, podemos submeter tarefas ao thread pool e obter o resultado delas quando estiverem prontas, usando o método get().
+//    Para evitar que o thread principal fique bloqueado esperando o resultado das tarefas, podemos executar o método get() em um thread separado.
+
+
+    //AULA 2
+
+//    como juntar os resultados de duas futures em uma única resposta. Para isso, criamos uma nova tarefa chamada JuntaResultadosFutureWSFutureBanco que recebe como parâmetros as futures do web service e do banco, além da saída do cliente.
+//    Essa tarefa utiliza o Callable para retornar um Void, pois não queremos retornar nenhum valor específico. Dentro da tarefa, esperamos os resultados das futures usando o método get com um timeout de 15 segundos. Se o timeout acontecer, cancelamos as tarefas e enviamos uma mensagem para o cliente informando o erro.
+//    Por fim, juntamos os resultados das futures e enviamos a resposta para o cliente. Testamos o código em dois cenários: um em que o timeout não acontece e outro em que o timeout acontece.
+
+
 
 }
