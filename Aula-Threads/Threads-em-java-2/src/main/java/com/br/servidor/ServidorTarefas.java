@@ -5,6 +5,8 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.SocketException;
 import java.util.Set;
+import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.atomic.AtomicBoolean;
@@ -15,12 +17,23 @@ public class ServidorTarefas {
     private ExecutorService executor;
     private ServerSocket servidor;
     private AtomicBoolean controleServidor;
+    private BlockingQueue<String> filaComandos;
 
     public ServidorTarefas() throws IOException {
         System.out.println("--------iniciando servidor----------");
         this.servidor = new ServerSocket(12345);
-        this.executor = Executors.newFixedThreadPool(4, new FabricaDeThread());
+        this.executor = Executors.newCachedThreadPool(new FabricaDeThread());
         this.controleServidor = new AtomicBoolean(true);
+        this.filaComandos = new ArrayBlockingQueue<>(2);
+        iniciarConsumidores();
+    }
+
+    private void iniciarConsumidores() {
+        int quantidadeConsumidores = 2;
+        for (int i = 0; i < quantidadeConsumidores; i++) {
+            TarefaConsumir tarefa = new TarefaConsumir(filaComandos);
+            this.executor.execute(tarefa);
+        }
     }
 
     public static void main(String[] args) throws IOException, InterruptedException {
@@ -40,7 +53,7 @@ public class ServidorTarefas {
                 Socket socket = servidor.accept();
                 System.out.println("Aceitando novo cliente na porta: " + socket.getPort() + socket.getInetAddress());
 
-                DistribuirTarefas distribuirTarefas = new DistribuirTarefas(executor,socket, this);
+                DistribuirTarefas distribuirTarefas = new DistribuirTarefas(executor,filaComandos,socket, this);
                 executor.execute(distribuirTarefas);
                 this.controleServidor.set(true);
                 System.out.println("--------Quantidade de threads----------- ");

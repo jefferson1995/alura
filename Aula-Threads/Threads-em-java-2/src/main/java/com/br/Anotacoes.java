@@ -134,5 +134,29 @@ public class Anotacoes {
 //    Por fim, juntamos os resultados das futures e enviamos a resposta para o cliente. Testamos o código em dois cenários: um em que o timeout não acontece e outro em que o timeout acontece.
 
 
+    //Produzindo e consumindo com Threads
+
+    //AULA 1
+
+//    interface Queue e como ela pode ser utilizada para criar filas de elementos. Vimos que a interface Queue oferece métodos específicos para adicionar e remover elementos da fila, como offer e poll, respectivamente.
+//    Também exploramos a interface BlockingQueue, que é uma subinterface de Queue e oferece métodos que bloqueiam a thread até que um elemento esteja disponível ou até que haja espaço na fila.
+//    Vimos que a BlockingQueue é ideal para implementar filas que serão compartilhadas entre threads, pois garante que a fila seja acessada de forma segura e eficiente.
+//    Para finalizar, aprendemos sobre as implementações da BlockingQueue, como o ArrayBlockingQueue, que permite definir a capacidade máxima da fila.
+
+
+    //AULA 2
+
+//    como usar threads para consumir comandos de uma fila.
+//    Primeiro, criamos uma fila de comandos usando a classe ArrayBlockingQueue, que limita a quantidade de comandos que podem ser armazenados.
+//    Depois, implementamos uma classe TarefaConsumir que usa a interface Runnable para consumir os comandos da fila. Essa tarefa usa o método take() da BlockingQueue para remover um comando da fila e processá-lo.
+//    Para garantir que os consumidores continuem trabalhando, implementamos um loop infinito dentro da TarefaConsumir que continua consumindo comandos da fila até que ela esteja vazia.
+//    Por fim, criamos um método iniciarConsumidores que cria threads para executar a TarefaConsumir e adiciona essas threads a um ThreadPool para gerenciar sua execução.
+//    Com isso, conseguimos criar um sistema que processa comandos de forma concorrente, usando threads para consumir os comandos da fila e garantir que o sistema continue funcionando mesmo quando a fila está cheia.
+
+
+
+
+
+
 
 }

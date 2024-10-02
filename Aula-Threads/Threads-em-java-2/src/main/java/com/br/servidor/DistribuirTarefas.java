@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.PrintStream;
 import java.net.Socket;
 import java.util.Scanner;
+import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Future;
 
@@ -12,11 +13,13 @@ public class DistribuirTarefas implements Runnable {
     private Socket socket;
     private ServidorTarefas servidorTarefas;
     ExecutorService threadPool;
+    private BlockingQueue<String> filacomandos;
 
-    public DistribuirTarefas(ExecutorService threadPool, Socket socket, ServidorTarefas servidorTarefas) {
+    public DistribuirTarefas(ExecutorService threadPool, BlockingQueue<String> filacomandos ,Socket socket, ServidorTarefas servidorTarefas) {
         this.socket = socket;
         this.servidorTarefas = servidorTarefas;
         this.threadPool = threadPool;
+        this.filacomandos = filacomandos;
     }
 
     @Override
@@ -41,7 +44,7 @@ public class DistribuirTarefas implements Runnable {
                         break;
                     }
                     case "c2": {
-                        System.out.println("recebendo comendo: " + linha);
+                        System.out.println("recebendo comando: " + linha);
                         ComandoC2ChamaWS comandoC2ChamaWS = new ComandoC2ChamaWS(saidaEnviarCliente);
                         ComandoC2AcessaBanco comandoC2AcessaBanco = new ComandoC2AcessaBanco(saidaEnviarCliente);
                         Future<String> futureWs = this.threadPool.submit(comandoC2ChamaWS);
@@ -52,7 +55,8 @@ public class DistribuirTarefas implements Runnable {
                         break;
                     }
                     case "c3": {
-                        saidaEnviarCliente.println("Confirmação comando c3");
+                        this.filacomandos.put(linha); // blocks
+                        saidaEnviarCliente.println("Comando c3 adicionado na fila ");
                         break;
                     }
                     case "fim": {
@@ -64,7 +68,6 @@ public class DistribuirTarefas implements Runnable {
                     }
                 }
 
-                System.out.println(linha);
             }
             saidaEnviarCliente.close();
             entradaCliente.close();
