@@ -136,5 +136,16 @@ public class Anotacoes {
 //    Além disso, aprendemos que a criação de muitas threads pode sobrecarregar o sistema, e que na próxima aula veremos formas de lidar com esse problema.
 
 
+    //Melhorando a performance da aplicação
+
+    //AULA 3
+
+//    Nessa aula, aprendemos como utilizar threads virtuais no Spring para melhorar a performance da aplicação.
+//    Vimos que, ao utilizar threads virtuais, conseguimos permitir que mais pessoas acessem o site simultaneamente, sem sobrecarregar o sistema.
+//    Para configurar o Spring para utilizar threads virtuais, precisamos adicionar a propriedade spring.threads.virtual.enabled=true no arquivo application.properties.
+//    Com essa configuração, todas as threads criadas no sistema serão virtuais, proporcionando um ganho de performance significativo.
+
+
+
 
 }

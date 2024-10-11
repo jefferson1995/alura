@@ -63,4 +63,25 @@ public class Anotacoes {
 //    Com o join(), a thread main aguarda a conclusão das threads de saque antes de prosseguir com suas próprias operações, como imprimir o saldo final.
 
 
+    //Melhorando a performance do sistema
+
+    //AULA 1
+
+//    Nessa aula, aprendemos a simular uma aplicação com muitas threads para entender como o sistema operacional pode ser sobrecarregado.
+//    Criamos um projeto de simulação e usamos o ExecutorService para criar um pool de 10.000 threads. Em seguida, criamos 10.000 tarefas (representadas pela classe ExecutaTarefa) e as adicionamos ao pool.
+//    Para medir o tempo de execução, usamos a classe Instant para marcar o início e o fim da execução das tarefas.
+//    Ao executar o projeto, observamos que o sistema operacional conseguiu lidar com 10.000 threads sem problemas.
+//    Depois, aumentamos o número de threads para 50.000 e 100.000. Com 50.000 threads, o computador começou a travar e o tempo de execução aumentou significativamente. Com 100.000 threads, o tempo de execução foi de 7 minutos.
+//    Isso demonstra que criar muitas threads diretamente no sistema operacional pode sobrecarregá-lo, levando a problemas de performance.
+//    Na próxima aula, vamos aprender sobre threads virtuais, que são uma forma mais eficiente de gerenciar threads, diminuindo o impacto no sistema operacional.
+
+
+    //AULA 2
+
+//    Nessa aula, aprendemos sobre as threads virtuais, uma maneira poderosa de melhorar o desempenho da nossa aplicação Java.
+//    Vimos que, ao invés de criar threads diretamente no sistema operacional, as threads virtuais são gerenciadas pela JVM, que as mapeia para threads do sistema de forma mais eficiente. Isso significa que podemos ter um número muito maior de threads virtuais, sem sobrecarregar o sistema.
+//    Utilizamos o ExecutorService para criar threads virtuais, e vimos como a performance da aplicação melhorou significativamente em comparação com as threads tradicionais.
+//    No próximo vídeo, vamos aplicar esse conhecimento no projeto Adopet Store para otimizar o servidor e atender mais usuários!
+
+
 }
