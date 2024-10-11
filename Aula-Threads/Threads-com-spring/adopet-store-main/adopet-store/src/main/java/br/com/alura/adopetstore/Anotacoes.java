@@ -60,4 +60,81 @@ public class Anotacoes {
 //    Com essa configuração, podemos controlar o número de threads que são criadas para enviar e-mails, garantindo que a aplicação não seja sobrecarregada e que os e-mails sejam enviados de forma rápida e eficiente.
 
 
+    //Agendando o envio de relatórios
+
+    //AULA 1
+
+//    Nessa aula, aprendemos a agendar tarefas no Spring utilizando a anotação @Scheduled.
+//    Primeiro, habilitamos o agendamento na classe principal da aplicação com @EnableScheduling. Depois, criamos uma classe AgendamentoService com a anotação @Service para configurar o agendamento.
+//    Utilizamos a anotação @Scheduled(cron) para definir o horário da tarefa, usando uma expressão cron com seis campos: segundo, minuto, hora, dia, mês e ano.
+//    Criamos um método envioEmailsAgendado() para simular o envio de e-mails, imprimindo as informações dos relatórios de estoque e faturamento no console.
+//    No próximo vídeo, vamos integrar o envio de e-mails ao agendamento.
+
+//    O cron é como um "cronômetro" que define quando uma tarefa deve ser executada. Ele usa uma expressão com seis campos, separados por espaços, para indicar o tempo:
+//    Segundo (0-59): Define o segundo exato da execução.
+//    Minuto (0-59): Define o minuto exato da execução.
+//    Hora (0-23): Define a hora exata da execução (24 horas).
+//    Dia do mês (1-31): Define o dia do mês em que a tarefa será executada.
+//    Mês (1-12): Define o mês em que a tarefa será executada.
+//    Dia da semana (0-6): Define o dia da semana em que a tarefa será executada (0 = Domingo, 6 = Sábado).
+//
+//    Alguns exemplos:
+//
+//      "0 0 12 * * *": Executa a tarefa todos os dias às 12h em ponto.
+//      "0 15 10 * * *": Executa a tarefa todos os dias às 10h15min.
+//      "0 0 * * 1-5": Executa a tarefa de segunda a sexta-feira, à meia-noite.
+//      "0 0 8 * * 2": Executa a tarefa às 8h da manhã, apenas nas terças-feiras.
+//      "*/5 * * * *": Executa a tarefa a cada 5 segundos.
+//    Você pode usar asteriscos (*) para indicar "qualquer valor" em um campo. Por exemplo, "*" no campo "dia do mês" significa que a tarefa será executada em todos os dias do mês.
+//
+//    Para entender melhor, imagine um relógio:
+//
+//    Os campos "segundo", "minuto" e "hora" representam as agulhas do relógio.
+//    Os campos "dia do mês", "mês" e "dia da semana" representam as datas e dias da semana.
+//    Você pode usar o cron para agendar tarefas com diferentes frequências, como:
+//
+//    Diariamente: Executa a tarefa todos os dias.
+//    Semanalmente: Executa a tarefa em um dia específico da semana.
+//            Mensalmente: Executa a tarefa em um dia específico do mês.
+//            Anualmente: Executa a tarefa em um dia específico do ano.
+//            Lembre-se: A expressão cron é poderosa, mas exige atenção para garantir que a tarefa seja executada no momento desejado.
+
+
+    //AULA 2
+
+//    aprendemos a configurar o envio de e-mails com relatórios gerados pela nossa aplicação, agendando essa tarefa para um horário específico.
+//    Primeiro, criamos uma classe EmailRelatorioGerado para enviar o e-mail com os relatórios de estoque e faturamento.
+//    Depois, na classe AgendamentoService, adicionamos a dependência da classe EmailRelatorioGerado e configuramos o agendamento do envio dos e-mails
+//    usando a anotação @Scheduled.
+//    Por fim, verificamos que o Spring cria uma nova thread para executar a tarefa agendada,
+//    garantindo que o envio dos e-mails aconteça em paralelo com outras funcionalidades da aplicação.
+//    Lembre-se que o método agendado deve ser do tipo void e sem parâmetros, pois não queremos recuperar o retorno ou passar informações para ele.
+
+    //AULA 3
+
+//    aprendemos a otimizar a performance do nosso sistema de envio de relatórios agendados,
+//    utilizando threads para paralelizar a geração dos relatórios de estoque e faturamento.
+//    Inicialmente, os relatórios eram gerados sequencialmente, o que resultava em um tempo de execução maior,
+//    especialmente quando lidávamos com um grande volume de dados.
+//    Para solucionar esse problema, utilizamos a anotação @Async para tornar os métodos de geração de relatórios assíncronos, permitindo que eles fossem executados em threads separadas.
+//    No entanto, essa abordagem gerou um novo desafio: como recuperar os resultados dos relatórios gerados em threads diferentes?
+//    Para resolver essa questão, introduzimos o CompletableFuture, um container que nos permite armazenar e recuperar os resultados de operações assíncronas.
+//    Com o CompletableFuture, conseguimos obter os relatórios gerados em cada thread e combiná-los para enviar o e-mail agendado.
+//    Ao final da aula, verificamos que a utilização de threads e CompletableFuture proporcionou uma melhora significativa na performance do nosso sistema,
+//    reduzindo o tempo de execução e garantindo a entrega rápida dos relatórios.
+//    Mas ainda há um desafio a ser enfrentado: a sincronização das threads. No próximo vídeo,
+//    vamos explorar como podemos garantir que os relatórios sejam combinados corretamente, mesmo sendo gerados em threads diferentes.
+
+
+    //AULA 4
+
+//    aprendemos sobre a importância de sincronizar as tarefas que são executadas em threads separadas,
+//    especialmente quando precisamos dos resultados de várias threads para prosseguir com uma tarefa principal.
+//    Vimos que, ao usar CompletableFuture.allOf(), podemos garantir que todas as threads que passamos como parâmetro terminem antes de prosseguirmos com a execução da thread principal.
+//    Isso é feito usando o método join(), que faz com que a thread principal espere até que as threads secundárias terminem.
+//    Essa técnica é crucial para evitar problemas como tentar acessar resultados de threads que ainda não terminaram, garantindo a integridade dos dados e a segurança da aplicação.
+//    Além disso, aprendemos que a criação de muitas threads pode sobrecarregar o sistema, e que na próxima aula veremos formas de lidar com esse problema.
+
+
+
 }
