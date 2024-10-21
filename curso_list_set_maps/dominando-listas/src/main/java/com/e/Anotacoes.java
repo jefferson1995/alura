@@ -24,4 +24,16 @@ public class Anotacoes {
 //    Lembre-se: a API do Java oferece muitas ferramentas prontas para facilitar o nosso trabalho. Explore-as e não tenha medo de usar o CTRL + Espaço no Eclipse para descobrir novas funcionalidades!
 
 
+    //O Poder dos sets
+
+    //AULA 1
+
+//    Nesta aula, aprendemos sobre uma nova coleção chamada Set, que é como um "saco" de objetos, sem uma ordem definida.
+//    A principal diferença entre Set e List é que Set não permite elementos repetidos, enquanto List sim.
+//    Além disso, Set é muito mais rápido para procurar elementos, pois utiliza uma tabela de espalhamento, enquanto List faz uma busca linear.
+//    Vimos também que podemos usar Set para guardar alunos em um curso, sem nos preocupar com a ordem em que eles foram adicionados.
+//    E para acessar os elementos de um Set, podemos usar um foreach.
+
+
+
 }
