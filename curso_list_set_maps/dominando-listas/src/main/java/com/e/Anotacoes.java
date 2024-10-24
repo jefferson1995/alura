@@ -74,6 +74,11 @@ public class Anotacoes {
 
     //Qual collection usar
 
+//    Essa aula nos ensinou sobre a importância de escolher a Collection ideal para cada situação. Vimos que a interface Collection é a base para todas as outras, como List e Set, e que cada uma tem suas vantagens e desvantagens.
+//    Para escolher a Collection certa, precisamos analisar se precisamos de uma ordem específica (como na List) ou se a ordem não importa (como no Set). Também precisamos considerar se queremos permitir elementos repetidos ou não.
+//    A aula nos mostrou que podemos declarar um atributo como Collection inicialmente, e depois, conforme a necessidade, podemos definir qual interface usar, como ArrayList ou HashSet.
+//    Essa flexibilidade nos permite escrever código mais genérico e adaptável, e com o tempo, vamos aprender a escolher a Collection ideal para cada situação!
+
 
 
 
