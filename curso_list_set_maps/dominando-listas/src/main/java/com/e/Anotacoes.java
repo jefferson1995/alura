@@ -63,6 +63,18 @@ public class Anotacoes {
 //    Assim como no evento, o hashCode e o equals trabalham juntos para organizar os objetos em grupos, garantindo que a busca por um objeto específico seja rápida e eficiente.
 
 
+    //Outros sets e iterators
+
+    //AULA1
+
+//    Nesta aula, aprendemos sobre outras implementações de Set, como o LinkedHashSet e o TreeSet. O LinkedHashSet mantém a ordem de inserção dos elementos, enquanto o TreeSet organiza os elementos de forma natural, exigindo que a classe dos elementos implemente a interface Comparable.
+//    Também exploramos o Iterator, um objeto que permite iterar sobre os elementos de uma coleção, acessando-os um a um. O Iterator é útil para percorrer coleções em código legado, antes do Java 5, e oferece métodos como hasNext e next para verificar se há um próximo elemento e acessá-lo, respectivamente.
+//    Por fim, conhecemos a classe Vector, uma implementação antiga de lista que era utilizada antes da interface Collection. A Vector é thread safe, ou seja, pode ser utilizada por múltiplas threads simultaneamente, mas não é recomendada devido à existência de outras formas mais eficientes de trabalhar com coleções em ambientes multithread.
+
+
+    //Qual collection usar
+
+
 
 
 
