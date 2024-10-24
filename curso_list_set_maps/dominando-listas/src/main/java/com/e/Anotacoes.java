@@ -47,6 +47,21 @@ public class Anotacoes {
 //    Lembre-se que o Set não garante a ordem dos elementos inseridos, então se você precisa de uma ordem específica, a List é a melhor opção.
 
 
+    //Equal e hashcode
+
+    //AULA 1
+
+//    Essa aula foi muito importante para entendermos como o método equals e o hashCode funcionam em conjunto para garantir a eficiência das coleções do Java, principalmente os Sets.
+//    Vimos que o equals define quando dois objetos são considerados iguais, e o hashCode gera um número único para cada objeto, que é usado para agrupar objetos semelhantes na tabela de espalhamento do Set.
+//    Se você sobrescrever o equals, precisa também sobrescrever o hashCode para garantir que objetos considerados iguais pelo equals também tenham o mesmo hashCode. Isso garante que a busca por objetos no Set seja rápida e eficiente.
+//    Lembre-se que o hashCode deve ser implementado de forma que gere números diferentes para objetos diferentes, e números iguais para objetos iguais, de acordo com a sua implementação do equals.
+
+//    Imagine que você está organizando um grande evento com várias pessoas. Para facilitar a organização, você decide criar grupos de pessoas com características em comum, como por exemplo, grupos por idade, por profissão ou por interesse em um tema específico.
+//    O hashCode seria como um número de identificação do grupo, e o equals seria como a regra que define quem pertence a cada grupo.
+//    Se você define que pessoas com a mesma idade pertencem ao mesmo grupo, o equals seria a regra que compara a idade de duas pessoas para determinar se elas pertencem ao mesmo grupo. O hashCode seria um número único para cada grupo de idade, como por exemplo, 1 para o grupo de 18 a 25 anos, 2 para o grupo de 26 a 35 anos, e assim por diante.
+//    Se você mudar a regra do equals para agrupar pessoas por profissão, você também precisa mudar a forma como o hashCode é calculado, para que ele gere números únicos para cada grupo de profissão.
+//    Assim como no evento, o hashCode e o equals trabalham juntos para organizar os objetos em grupos, garantindo que a busca por um objeto específico seja rápida e eficiente.
+
 
 
 
