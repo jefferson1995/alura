@@ -35,5 +35,20 @@ public class Anotacoes {
 //    E para acessar os elementos de um Set, podemos usar um foreach.
 
 
+    //Aplicando o Set no modelo
+
+    //AULA1
+
+//    Nessa aula, aprendemos a usar o Set na prática, aplicando-o em nosso modelo de curso.
+//    Criamos a classe Aluno com os atributos nome e numeroMatricula, e a classe Curso com um Set de alunos.
+//    Utilizamos o TDD (Test Driven Development) para criar o método matricula na classe Curso, que adiciona um aluno ao Set.
+//    Também criamos o getter de alunos em Curso, retornando um Set imutável para garantir a segurança dos dados.
+//    Por fim, aprendemos a exibir os alunos do curso, utilizando o método toString da classe Aluno para formatar a saída.
+//    Lembre-se que o Set não garante a ordem dos elementos inseridos, então se você precisa de uma ordem específica, a List é a melhor opção.
+
+
+
+
+
 
 }
