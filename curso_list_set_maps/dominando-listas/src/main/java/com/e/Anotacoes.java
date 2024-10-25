@@ -80,6 +80,14 @@ public class Anotacoes {
 //    Essa flexibilidade nos permite escrever código mais genérico e adaptável, e com o tempo, vamos aprender a escolher a Collection ideal para cada situação!
 
 
+    //Mapas
+
+    //AULA1
+
+//    Nesta aula, aprendemos sobre a interface Map e como ela pode ser utilizada para criar associações entre chaves e valores. Vimos que o Map é uma estrutura de dados muito útil para realizar buscas eficientes, especialmente quando precisamos encontrar um valor específico a partir de uma chave.
+//    A implementação mais comum de Map é o HashMap, que utiliza uma tabela de espalhamento para armazenar as associações. O HashMap é muito rápido para realizar buscas, inserções e remoções, tornando-o ideal para cenários onde a performance é crucial.
+//    Também exploramos outras implementações de Map, como o LinkedHashMap, que mantém a ordem de inserção dos elementos, e o HashTable, que é uma implementação antiga e thread safe.
+//    Por fim, aprendemos que é importante consultar a documentação do java.util para explorar as diversas funcionalidades e métodos já implementados para as coleções do Java.
 
 
 
