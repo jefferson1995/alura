@@ -6,6 +6,8 @@ import br.com.alura.screenmatch.modelos.Serie;
 import br.com.alura.screenmatch.modelos.Titulo;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class PrincipalComLista {
@@ -29,5 +31,26 @@ public class PrincipalComLista {
             }
             System.out.println(titulo.getNome());
         });
+
+        List<String> buscaPorArtista = new ArrayList<>();
+
+        buscaPorArtista.add("teste 1");
+        buscaPorArtista.add("aeste 2");
+        buscaPorArtista.add("meste 3");
+
+        Collections.sort(buscaPorArtista);
+
+        System.out.println(buscaPorArtista);
+
+        System.out.println("Lista de assistidos sem ordenar");
+        System.out.println(listaDeAssistidos);
+
+        System.out.println("Lista de assistidos ordenados: ");
+        Collections.sort(listaDeAssistidos);
+        System.out.println(listaDeAssistidos);
+
+        System.out.println("Outra opção para comparar: ");
+        listaDeAssistidos.sort(Comparator.comparing(Titulo::getAnoDeLancamento));
+        System.out.println(listaDeAssistidos);
     }
 }

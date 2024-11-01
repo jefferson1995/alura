@@ -56,4 +56,48 @@ public class Anotacoes {
 //    E por fim, falamos sobre variáveis de referência, que são como ponteiros que nos permitem acessar objetos. É importante lembrar que quando atribuímos um objeto a uma nova variável, não estamos criando uma cópia, mas sim uma nova referência para o mesmo objeto.
 
 
+    //Ordenando Dados
+
+    //AULA 1
+
+//    Nessa aula, aprendemos como ordenar listas de objetos em Java. Vimos que o método Collections.sort() pode ser usado para ordenar listas de objetos que implementam a interface Comparable.
+//    A interface Comparable define um método chamado compareTo(), que é usado para comparar dois objetos do mesmo tipo. O método compareTo() retorna um inteiro negativo se o primeiro objeto vem antes do segundo, um inteiro positivo se o primeiro objeto vem depois do segundo e zero se os objetos são iguais.
+//    Para ordenar uma lista de objetos, precisamos implementar a interface Comparable na classe do objeto e implementar o método compareTo(). No método compareTo(), podemos comparar os atributos do objeto que queremos usar para ordenar a lista.
+//    Por exemplo, se quisermos ordenar uma lista de títulos de filmes em ordem alfabética, podemos comparar o atributo nome dos títulos no método compareTo().
+
+    //AULA 2
+
+//    Nessa aula, aprendemos como ordenar listas de objetos em Java usando o método sort(). Vimos que podemos ordenar por diferentes critérios, como o nome do filme ou o ano de lançamento.
+//    Para ordenar por um critério diferente do que foi definido no método compareTo(), usamos o Comparator.comparing(). Esse método nos permite escolher qual atributo da classe queremos usar para comparar os objetos.
+//    Por exemplo, para ordenar por ano de lançamento, usamos Comparator.comparing(Titulo::getAnoDeLancamento).
+//    Essa aula nos mostrou como a linguagem Java oferece recursos modernos e eficientes para ordenar listas de objetos, simplificando o processo e tornando o código mais legível.
+
+    //AULA 3
+
+//    Nessa aula, aprendemos sobre a importância de usar interfaces no Java, especialmente quando trabalhamos com listas e coleções. Vimos que, ao invés de usar diretamente a classe ArrayList, podemos usar a interface List, que define os métodos comuns a todas as listas. Isso torna nosso código mais genérico e flexível, pois podemos usar qualquer implementação de lista que implemente a interface List.
+//    Além disso, conhecemos outras interfaces importantes como Collection, Set e Map, que representam diferentes tipos de coleções de dados. A Collection é a interface mãe de quase todas as coleções, enquanto a Set representa um conjunto de elementos únicos e a Map é como um dicionário, que associa chaves a valores.
+//    Entender essas interfaces é fundamental para trabalhar com coleções no Java, pois elas nos permitem usar diferentes implementações de forma transparente e eficiente.
+
+
+
+//    O Java oferece diferentes classes para representar uma lista de objetos. Essas classes são úteis em diferentes cenários, dependendo das necessidades de cada aplicação.
+//
+//    As classes mais comuns para representar uma lista no Java são:
+//
+//    ArrayList
+//    A principal característica do ArrayList é que ele é baseado em um array dinâmico. Ele armazena os elementos em uma matriz interna e, conforme novos elementos são adicionados, o tamanho da matriz é automaticamente ajustado para acomodar o novo elemento. Da mesma forma, quando um elemento é removido, o tamanho do array é ajustado para evitar o desperdício de espaço. O ArrayList é amplamente utilizado devido à sua facilidade de uso e eficiência em termos de desempenho.
+//
+//            LinkedList
+//    A classe LinkedList fornece uma lista encadeada de elementos. Diferentemente do ArrayList, que é baseado em um array, o LinkedList é baseado em uma lista encadeada, o que significa que cada elemento da lista é um objeto que contém uma referência para o próximo elemento. Isso permite que os elementos sejam adicionados e removidos de maneira eficiente em qualquer posição da lista, mas pode tornar a pesquisa de um elemento específico menos eficiente.
+//    O LinkedList é uma boa escolha quando a inserção e remoção de elementos em qualquer posição da lista é frequente e quando não é necessário acessar os elementos de forma aleatória.
+//
+//            Vector
+//    A classe Vector é semelhante ao ArrayList, mas é sincronizada, o que significa que é segura para uso em threads concorrentes. No entanto, a sincronização adiciona uma sobrecarga de desempenho, então o Vector pode ser mais lento que o ArrayList em algumas situações.
+//
+//    Stack
+//    A classe Stack implementa uma pilha, que é uma coleção ordenada de elementos onde a inserção e remoção de elementos ocorrem sempre no mesmo extremo da lista. Os elementos são adicionados e removidos em uma ordem conhecida como "last-in, first-out" (LIFO), ou seja, o último elemento adicionado é o primeiro a ser removido. A classe Stack é usada com frequência em algoritmos de processamento de texto, bem como em outras situações em que a LIFO é a maneira natural de organizar os dados.
+//    Cada uma dessas classes tem seus próprios pontos fortes e fracos, e a escolha de qual usar dependerá das necessidades específicas da aplicação. Para um melhor entendimento sobre estruturas de dados, recomendamos a leitura dos seguintes artigos:
+
+
+
 }
