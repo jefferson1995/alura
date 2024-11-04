@@ -98,6 +98,21 @@ public class Anotacoes {
 //    A classe Stack implementa uma pilha, que é uma coleção ordenada de elementos onde a inserção e remoção de elementos ocorrem sempre no mesmo extremo da lista. Os elementos são adicionados e removidos em uma ordem conhecida como "last-in, first-out" (LIFO), ou seja, o último elemento adicionado é o primeiro a ser removido. A classe Stack é usada com frequência em algoritmos de processamento de texto, bem como em outras situações em que a LIFO é a maneira natural de organizar os dados.
 //    Cada uma dessas classes tem seus próprios pontos fortes e fracos, e a escolha de qual usar dependerá das necessidades específicas da aplicação. Para um melhor entendimento sobre estruturas de dados, recomendamos a leitura dos seguintes artigos:
 
+    //Consolidando conhecimentos
 
+
+    //AULA 1
+
+//    Nessa aula, aprendemos a modelar as classes CartaoDeCredito e Compra em Java. Começamos definindo os atributos de cada classe, como limite, saldo e compras para o cartão de crédito, e descrição e valor para a compra.
+//    Criamos construtores para as classes, garantindo que o cartão de crédito seja inicializado com um limite definido e que cada compra seja criada com uma descrição e valor específicos.
+//    Também implementamos métodos getters para acessar os atributos das classes, mas não criamos setters para o limite e saldo do cartão de crédito, pois queremos garantir que esses valores sejam imutáveis após a criação do objeto.
+//    Por fim, criamos um método lancaCompra na classe CartaoDeCredito para verificar se há saldo suficiente para realizar uma compra e, se sim, subtrair o valor da compra do saldo e adicionar a compra na lista de compras.
+
+
+    //AULA2
+
+//    Nessa aula, aprendemos a ordenar uma lista de compras por valor, usando a interface Comparable e o método compareTo.
+//    Primeiro, criamos uma classe Compra que implementa a interface Comparable<Compra>. Depois, implementamos o método compareTo dentro da classe Compra, que compara o valor de duas compras usando a classe Double para comparar os valores double.
+//    Com isso, conseguimos ordenar a lista de compras por valor, exibindo as compras mais caras primeiro.
 
 }
